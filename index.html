@@ -3,37 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bento | Gourmet Pasta</title>
+    <title>The Bento | JB Food</title>
     <style>
-        body { font-family: 'Georgia', serif; background-color: #000; color: #fff; text-align: center; margin: 0; padding: 0; }
-        .container { padding: 40px 20px; max-width: 500px; margin: auto; }
-        .logo { font-size: 2.5rem; letter-spacing: 4px; border-bottom: 2px solid #d4af37; display: inline-block; margin-bottom: 10px; }
-        .tagline { font-style: italic; color: #d4af37; margin-bottom: 30px; }
-        .price-tag { font-size: 1.5rem; background: #d4af37; color: #000; display: inline-block; padding: 5px 15px; border-radius: 5px; font-weight: bold; margin: 20px 0; }
-        .dish-desc { font-size: 1.1rem; line-height: 1.6; margin-bottom: 30px; }
-        .btn { background-color: #25d366; color: white; padding: 20px 40px; text-decoration: none; font-size: 1.3rem; border-radius: 50px; display: block; font-weight: bold; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
-        .footer { margin-top: 50px; font-size: 0.8rem; color: #888; }
+        body {
+            background-color: #0d0d0d;
+            color: #d4af37; /* Majestic Gold */
+            font-family: 'Playfair Display', serif; /* Elegant Serif */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            border: 1px solid #262626;
+            padding: 60px 20px;
+            max-width: 600px;
+            background: linear-gradient(145deg, #121212, #000000);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 0.3em;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .established {
+            font-size: 0.8rem;
+            letter-spacing: 0.5em;
+            color: #8c8c8c;
+            margin-bottom: 50px;
+        }
+        .dish-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-style: italic;
+            color: #a6a6a6;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .price-tag {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            padding: 15px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        .slashed {
+            text-decoration: line-through;
+            color: #595959;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        .limited-alert {
+            color: #ff4d4d;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .delivery-info {
+            font-size: 0.9rem;
+            color: #8c8c8c;
+            margin-bottom: 40px;
+        }
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #000;
+            padding: 18px 45px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border-radius: 0;
+        }
+        .btn-whatsapp:hover {
+            background-color: #ffffff;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">THE BENTO</div>
-        <p class="tagline">Established 2025</p>
-        
-        <div class="dish-desc">
-            <strong>Signature Smoked Duck Aglio Olio</strong><br>
-            With our House-Made Chili Oil & Parmesan
-        </div>
 
-        <div class="price-tag">PROMO: RM 16.00</div>
+<div class="container">
+    <h1>THE BENTO</h1>
+    <div class="established">ESTABLISHED 2025</div>
 
-        <a href="https://wa.me/60127082841?text=Hi%20The%20Bento!%20I%20want%20to%20order%20the%20RM16%20Smoked%20Duck%20Aglio%20Olio" class="btn">
-            ORDER VIA WHATSAPP
-        </a>
+    <div class="dish-title">Signature Smoked Duck Aglio Olio</div>
+    <div class="description">With House-Made Chili Oil & Aged Parmesan</div>
 
-        <div class="footer">
-            Location: Johor Bahru | Contact: 0127082841
-        </div>
+    <div class="price-tag">
+        <span class="slashed">RM 24.00</span> RM 16.00
     </div>
+
+    <div class="limited-alert">⚠ LIMITED TO 50 BOXES ONLY</div>
+    <div class="delivery-info">Delivery: RM 4.00 (Johor Bahru area only)</div>
+
+    <a href="https://wa.link/wvi061" class="btn-whatsapp">RESERVE VIA WHATSAPP</a>
+    
+    <p style="margin-top: 50px; font-size: 0.7rem; color: #404040; letter-spacing: 2px;">JOHOR BAHRU | 0127082841</p>
+</div>
+
 </body>
 </html>
