@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bento | JB Food</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --gold: #D4AF37;
+            --dark-bg: #0d0d0d;
+            --card-bg: #121212;
+            --text-grey: #8c8c8c;
+        }
+
         body {
-            background-color: #0d0d0d;
-            color: #d4af37; /* Majestic Gold */
-            font-family: 'Playfair Display', serif; /* Elegant Serif */
+            background-color: var(--dark-bg);
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
             margin: 0;
             display: flex;
             justify-content: center;
@@ -16,13 +25,17 @@
             min-height: 100vh;
             text-align: center;
         }
+
         .container {
             border: 1px solid #262626;
             padding: 60px 20px;
             max-width: 600px;
-            background: linear-gradient(145deg, #121212, #000000);
+            width: 100%;
+            background: linear-gradient(145deg, var(--card-bg), #000000);
             box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            margin: 20px;
         }
+
         h1 {
             font-size: 3rem;
             letter-spacing: 0.3em;
@@ -30,60 +43,146 @@
             text-transform: uppercase;
             font-weight: 400;
         }
+
         .established {
             font-size: 0.8rem;
             letter-spacing: 0.5em;
-            color: #8c8c8c;
-            margin-bottom: 50px;
+            color: var(--text-grey);
+            margin-bottom: 40px;
         }
+
+        .hero-img {
+            width: 100%;
+            border: 1px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        /* Tabs Styling */
+        .tab-container {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 1px solid transparent;
+            color: var(--text-grey);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .tab-btn:hover {
+            color: var(--gold);
+        }
+
+        .tab-btn.active {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Menu Content Animation */
+        .menu-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        .menu-content.active {
+            display: block;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .dish-title {
             font-size: 1.8rem;
             color: #ffffff;
             margin-bottom: 10px;
         }
+
         .description {
             font-style: italic;
             color: #a6a6a6;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             line-height: 1.6;
+            font-family: 'Inter', sans-serif;
         }
+
         .price-tag {
             font-size: 1.5rem;
-            margin: 30px 0;
+            margin: 20px 0;
             padding: 15px;
             border-top: 1px solid #333;
             border-bottom: 1px solid #333;
         }
+
         .slashed {
             text-decoration: line-through;
             color: #595959;
             margin-right: 15px;
             font-size: 1.2rem;
         }
+
         .limited-alert {
             color: #ff4d4d;
             font-weight: bold;
             letter-spacing: 2px;
             margin-bottom: 10px;
+            font-size: 0.9rem;
         }
+
         .delivery-info {
             font-size: 0.9rem;
-            color: #8c8c8c;
+            color: var(--text-grey);
             margin-bottom: 40px;
         }
+
         .btn-whatsapp {
             display: inline-block;
-            background-color: #d4af37;
+            background-color: var(--gold);
             color: #000;
             padding: 18px 45px;
             text-decoration: none;
             font-weight: bold;
             letter-spacing: 2px;
             transition: 0.3s;
-            border-radius: 0;
+            font-family: 'Inter', sans-serif;
         }
+
         .btn-whatsapp:hover {
             background-color: #ffffff;
+            transform: scale(1.05);
+        }
+
+        .footer-info {
+            margin-top: 50px;
+            font-size: 0.7rem;
+            color: #404040;
+            letter-spacing: 2px;
+        }
+
+        /* Add-ons styling */
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #333;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
@@ -92,13 +191,38 @@
 <div class="container">
     <h1>THE BENTO</h1>
     <div class="established">ESTABLISHED 2025</div>
-    <img src="WhatsApp Image 2025-12-30 at 22.04.26.jpeg" alt="The Bento Signature Dish" style="width: 100%; border: 1px solid #d4af37; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+    
+    <img src="WhatsApp Image 2025-12-30 at 22.04.26.jpeg" alt="The Bento Signature Dish" class="hero-img">
 
-    <div class="dish-title">Signature Smoked Duck Aglio Olio</div>
-    <div class="description">With House-Made Chili Oil & Aged Parmesan</div>
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="openTab(event, 'signature')">Signature Dish</button>
+        <button class="tab-btn" onclick="openTab(event, 'sides')">Sides & Add-ons</button>
+    </div>
 
-    <div class="price-tag">
-        <span class="slashed">RM 24.00</span> RM 16.00
+    <div id="signature" class="menu-content active">
+        <div class="dish-title">Smoked Duck Aglio Olio</div>
+        <div class="description">With House-Made Chili Oil & Aged Parmesan</div>
+        <div class="price-tag">
+            <span class="slashed">RM 24.00</span> RM 16.00
+        </div>
+    </div>
+
+    <div id="sides" class="menu-content">
+        <div style="text-align: left; max-width: 400px; margin: 0 auto;">
+            <div class="addon-item">
+                <span>Extra Smoked Duck</span>
+                <span>+ RM 6.00</span>
+            </div>
+            <div class="addon-item">
+                <span>Double Aged Parmesan</span>
+                <span>+ RM 3.00</span>
+            </div>
+            <div class="addon-item">
+                <span>Signature Chili Oil (Small Jar)</span>
+                <span>+ RM 5.00</span>
+            </div>
+        </div>
+        <div style="margin-bottom: 40px;"></div>
     </div>
 
     <div class="limited-alert">⚠ LIMITED TO 50 BOXES ONLY</div>
@@ -106,10 +230,30 @@
 
     <a href="https://wa.link/wvi061" class="btn-whatsapp">RESERVE VIA WHATSAPP</a>
     
-    <p style="margin-top: 50px; font-size: 0.7rem; color: #404040; letter-spacing: 2px;">JOHOR BAHRU | 0127082841</p>
+    <p class="footer-info">JOHOR BAHRU | 0127082841</p>
 </div>
+
+<script>
+function openTab(evt, tabName) {
+    var i, content, buttons;
+
+    // Hide all menu sections
+    content = document.getElementsByClassName("menu-content");
+    for (i = 0; i < content.length; i++) {
+        content[i].classList.remove("active");
+    }
+
+    // Deactivate all buttons
+    buttons = document.getElementsByClassName("tab-btn");
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+
+    // Show the specific tab clicked and mark button as active
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
 
 </body>
 </html>
-
-
